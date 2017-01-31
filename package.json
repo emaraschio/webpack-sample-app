@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack -p",
-    "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors"
+    "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
+    "test": "./node_modules/.bin/nightwatch"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.28",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.2.0-rc.0"
+    "webpack-dev-server": "^2.2.0-rc.0",
+    "nightwatch": "^0.9.8"
   }
 }
