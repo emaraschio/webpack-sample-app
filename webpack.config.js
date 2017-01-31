@@ -1,7 +1,8 @@
 const webpack = require('webpack')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractCSS = new ExtractTextPlugin('[name].bundle.css')
+const ExtractCSS = new ExtractTextPlugin('[name].bundle.css')
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const config = {
   context: __dirname + '/src',
@@ -17,7 +18,7 @@ const config = {
     rules: [{
       test: /\.scss$/,
       include: __dirname + '/src',
-      loader: extractCSS.extract(['css-loader','sass-loader'])
+      loader: ExtractCSS.extract(['css-loader','sass-loader'])
     }, {
       test: /\.js$/,
       include: __dirname + '/src',
@@ -29,7 +30,8 @@ const config = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    extractCSS
+    new DashboardPlugin(),
+    ExtractCSS
   ]
 }
 
