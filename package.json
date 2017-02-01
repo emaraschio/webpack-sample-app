@@ -1,12 +1,12 @@
 {
   "name": "webpack-app",
   "version": "0.0.1",
-  "description": "",
+  "description": " Another Webpack 2 sample App ",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot",
+    "start": "webpack-dev-server --inline --hot --config webpack.config.dev.js",
     "build": "webpack -p",
-    "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors --config webpack.config.dev.js",
+    "dev": "webpack-dashboard -t 'Another Webpack 2 sample App' -- webpack-dev-server --progress --profile --colors --config webpack.config.dev.js",
     "test": "./node_modules/.bin/nightwatch"
   },
   "keywords": [],
