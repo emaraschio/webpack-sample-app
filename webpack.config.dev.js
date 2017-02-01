@@ -15,18 +15,21 @@ const config = {
     filename: '[name].bundle.js'
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      include: __dirname + '/src',
-      loader: ExtractCSS.extract(['css-loader','sass-loader'])
-    }, {
-      test: /\.js$/,
-      include: __dirname + '/src',
-      use: [{
-        loader: 'babel-loader',
-        options: { presets: ['es2015'] }
-      }]
-    }]
+    rules: [
+      {
+        test: /\.scss$/,
+        include: __dirname + '/src',
+        loader: ExtractCSS.extract(['css-loader','sass-loader'])
+      }, 
+      {
+        test: /\.js$/,
+        include: __dirname + '/src',
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['es2015'] }
+        }]
+      }
+    ]
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
