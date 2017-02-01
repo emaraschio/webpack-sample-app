@@ -1,4 +1,4 @@
-# A Webpack 2 sample App
+# Another Webpack 2 sample App
 
 ## Requirements
 
