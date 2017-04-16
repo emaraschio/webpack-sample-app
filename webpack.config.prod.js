@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const ExtractCSS = new ExtractTextPlugin('[name].bundle.css')
-const CleanupPlugin = require('webpack-cleanup-plugin');
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractCSS = new ExtractTextPlugin('[name].bundle.css')
+var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   context: __dirname + '/src',
@@ -46,6 +46,10 @@ const config = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     ExtractCSS,
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+    new webpack.optimize.DedupePlugin()
   ]
 }
 

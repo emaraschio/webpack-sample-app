@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const ExtractCSS = new ExtractTextPlugin('[name].bundle.css')
-const DashboardPlugin = require('webpack-dashboard/plugin');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractCSS = new ExtractTextPlugin('[name].bundle.css');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 const config = {
   context: __dirname + '/src',
@@ -32,7 +32,11 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
     new DashboardPlugin(),
     ExtractCSS
   ]

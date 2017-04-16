@@ -1,6 +1,6 @@
 {
   "name": "webpack-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": " Another Webpack 2 sample App ",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.28",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.2.0-rc.0"
+    "webpack-dev-server": "^2.2.0-rc.0",
+    "webpack-cleanup-plugin": "^0.4.2",
+    "html-webpack-plugin": "^2.24.1"
   }
 }
